@@ -9,6 +9,14 @@ describe BankTeller do
     end
   end 
 
+  describe '#credit' do
+    it 'takes out amount from balance' do
+      first = BankTeller.new()
+      first.add(100)
+      first.remove(50)
+      expect(fist.balance).to eq(50)
+    end
+  end
 
 
 

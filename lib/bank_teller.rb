@@ -7,9 +7,12 @@ class BankTeller
   end
 
   def add(credit)
-    p @balance
     @balance += credit 
-    # @account.push(["#{Time.new}" + "||" + "#{credit}" + "||"+"||" + "#{balance}"])
+  end
+
+  def remove(credit)
+    @balance -= credit
+    
   end
 
   # def show

@@ -14,7 +14,16 @@ describe BankTeller do
   describe '#remove' do
     it 'return array with balance and credited amount' do
       first = BankTeller.new
+      first.add(100)
       expect(first.remove(50)).to eq(["date || || 50 || 50"])
+    end
+  end
+  describe '#remove' do
+    it 'return array with balance and credited amount' do
+      first = BankTeller.new
+      first.add(100)
+      first.add(100)
+      expect(first).to eq([["date || || 100 || 100"],["date || || 100 || 200"]])
     end
   end
 end

@@ -6,18 +6,21 @@ class BankTeller
 
   attr_reader :balance
 
-  def initialize(account = [], balance = 0)
+  def initialize(balance = 0)
     @balance = balance
+    @account = []
   end
 
   def add(credit)
     @balance += credit
     new = ["date || #{credit} || || #{balance}"]
+    @account << new
   end
 
   def remove(credit)
-    @balance += credit
+    @balance -= credit
     new = ["date || || #{credit} || #{balance}"]
+    @account << new
   end
 
 

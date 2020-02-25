@@ -1,3 +1,22 @@
+
+class BankAccount
+
+  attr_reader :account_balance
+
+  def initialize()
+    @account_balance = 0
+  end
+
+
+
+
+
+end
+
+
+
+
+
 # hold bank account actions like add/remove/show
 # require "./bank_statment"
 

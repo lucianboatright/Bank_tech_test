@@ -1,14 +1,14 @@
-# require "bank_account"
+require "bank_accounts"
 
 
-# describe BankAccount do
-#   describe '#account' do
-#     it 'has an initial balance' do
-#       account = BankAccount.new
-#       expect(account.account_balance).to eq(0)
-#     end
-#   end
-# end
+describe BankAccount do
+  describe '#account' do
+    it 'has an initial balance' do
+      account = BankAccount.new
+      expect(account.account_balance).to eq(0)
+    end
+  end
+end
 
 
 

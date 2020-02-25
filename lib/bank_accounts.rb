@@ -1,39 +1,38 @@
 # hold bank account actions like add/remove/show
-require "./bank_statment"
+# require "./bank_statment"
 
-require "./bank_interactions"
+# require "./bank_interactions"
 
 
-class BankAccount
+# class BankAccount
 
-  attr_reader :balance
+#   attr_reader :balance
 
-  def initialize(balance = 0)
-    @balance = balance
-    @statments = [['date || credit || debit || balance']]
-  end
+#   def initialize(balance = 0)
+#     @balance = balance
+#     @statments = [['date || credit || debit || balance']]
+#   end
 
-  def add_balace(money)
-    @balance += money
-    @statments << BankStatment.debit_statment(money, @balance)
-  end
+#   def debit(money)
+#     @statments << BankStatment.new(money, @balance)
+#   end
 
-  def remove_balance(money)
-    @balance -= money
-    @statments << BankStatment.credit_statment(money, @balance)
-  end
+#   def credit(money)
+#     @balance -= money
+#     @statments
+#   end
 
-  def show
-    puts @statments.join("\n")
-  end
+#   def show
 
-end
+#   end
 
-Nic = BankAccount.new
-Nic.add_balace(1000000)
-Nic.remove_balance(500000)
-Nic.remove_balance(25000)
-Nic.show()
+# end
+
+# Nic = BankAccount.new
+# Nic.add_balace(1000000)
+# Nic.remove_balance(500000)
+# Nic.remove_balance(25000)
+# Nic.show()
 
 
 

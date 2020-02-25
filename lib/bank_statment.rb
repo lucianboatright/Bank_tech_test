@@ -2,14 +2,21 @@
 # require "./bank_accounts"
 
 
-class BankStatment
+# class BankStatment
 
-  def self.debit_statment(money, balance)
-    ["date || #{money} || || #{balance}"]  
-  end
+#   attr_reader :money, :balance
 
-  def self.credit_statment(money, balance)
-    ["date || || #{money} || #{balance}"]  
-  end
+#   def initialze(money, balance)
+#     @money = money
+#     @balance = BankAccount.balance
+#   end
 
-end
+#   def self.debit_statment(money, balance)
+#     ["date || #{money} || || #{balance}"]  
+#   end
+
+#   def self.credit_statment(money, balance)
+#     ["date || || #{money} || #{balance}"]  
+#   end
+
+# end

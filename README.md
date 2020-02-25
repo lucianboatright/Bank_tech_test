@@ -10,6 +10,14 @@ Depostie money into an account
 Test 
 - User can be added to the bank and is held in -->
 
+As a User 
+I would like to add to my account with a date stamp
+
+
+As a User 
+I would like to remove money from my account 
+
+
 As a User I would like to 
 Add money to their account
 Test

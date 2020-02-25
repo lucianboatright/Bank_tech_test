@@ -64,6 +64,45 @@ describe BankAccount do
       expect(@account.transactions[0].date).to eq(now)
     end
   end
+  describe '#print_statement' do
+    it 'displays an empty table when no transaction have happened' do
+      expect do
+        @account.print_statement()
+      end.to output("date || credit || debit || balance\n").to_stdout
+    end
+    it 'displays debited transactions' do 
+      @account.balance += 1000
+      now = Time.now
+      Timecop.freeze(now) do
+        @account.deposit(10)
+      end 
+      expect do
+        @account.print_statement()
+      end.to output("date || credit || debit || balance\n#{now} || || 10 || 1010\n").to_stdout
+    end
+    it 'displays credited transactions' do 
+      @account.balance += 1000
+      now = Time.now
+      Timecop.freeze(now) do
+        @account.withdraw(10)
+      end 
+      expect do
+        @account.print_statement()
+      end.to output("date || credit || debit || balance\n#{now} || 10 || || 990\n").to_stdout
+    end
+    it 'displays multiple transactions both deposites and withdraws' do 
+      @account.balance += 1000
+      now = Time.now
+      Timecop.freeze(now) do
+        @account.withdraw(40)
+        @account.deposit(10)
+        @account.withdraw(30)
+      end 
+      expect do
+        @account.print_statement()
+      end.to output("date || credit || debit || balance\n#{now} || 40 || || 960\n#{now} || || 10 || 970\n#{now} || 30 || || 940\n").to_stdout
+    end
+  end
 
 end
 

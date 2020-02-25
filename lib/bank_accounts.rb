@@ -1,3 +1,6 @@
+require_relative "bank_interactions"
+
+
 
 class BankAccount
 
@@ -18,6 +21,17 @@ class BankAccount
   def withdraw(amount)
     @balance -= amount
     @transactions << BankTransaction.new("credit", Time.now, amount, @balance)
+  end
+
+  def print_statement()
+    puts "date || credit || debit || balance"
+    @transactions.each do |transaction|
+      if transaction.type == "debit"
+        puts "#{transaction.date} || || #{transaction.amount} || #{transaction.balance}"
+      else
+        puts "#{transaction.date} || #{transaction.amount} || || #{transaction.balance}"
+      end
+    end
   end
 
 end

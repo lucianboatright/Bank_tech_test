@@ -3,12 +3,14 @@
     "coverage": {
       "/Users/lukeboat/Documents/Programing/Tech_test_bank/spec/bank_account_spec.rb": {
         "lines": [
+          1,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -41,7 +43,11 @@
           1,
           1,
           null,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -94,9 +100,10 @@
           1,
           null,
           1,
-          2,
-          2,
-          2,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -129,6 +136,6 @@
         ]
       }
     },
-    "timestamp": 1582642879
+    "timestamp": 1582661874
   }
 }

@@ -1,10 +1,14 @@
 require "bank_interactions"
 
-describe BankInteraction do
+describe BankTransaction do
   describe '#debit' do
     it 'return hash with balance and credited amount' do
       # first = BankInteraction.debit(date: "date", debit: 100, balance: @balance)
-      expect(BankInteraction.new("credit","date",100).inspect).to eq('credit',Time.now.strftime("%d/%m/%Y"),100)
+      transaction = BankTransaction.new("credit","date",100,1000)
+      expect(transaction.type).to eq("credit")
+      expect(transaction.date).to eq("date")
+      expect(transaction.amount).to eq(100)
+      expect(transaction.balance).to eq(1000)
     end
   end
 end

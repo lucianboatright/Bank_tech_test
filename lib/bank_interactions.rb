@@ -1,17 +1,17 @@
 
-class BankInteraction
+class BankTransaction
 
-  attr_reader :type, :amount, :balance
+  attr_reader :type, :amount, :balance, :date
 
-  def initialize(type, date = @date, amount , balance)
+  def initialize(type, date, amount , balance)
     @type = type
-    @date = "date"
+    @date = date
     @amount = amount
-    @balance = 
+    @balance = balance
   end
 end
 
-nic = BankInteraction.new("credit", 100)
+nic = BankTransaction.new("credit", "date", 100, 1000)
 
 puts nic.inspect
 

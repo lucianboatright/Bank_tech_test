@@ -1,4 +1,5 @@
 require "bank_accounts"
+require "timecop"
 
 
 describe BankAccount do
@@ -29,11 +30,15 @@ describe BankAccount do
     end
     it 'deposit transaction recorded' do
       @account.balance += 1000
-      @account.deposit(10)
+      now = Time.now
+      Timecop.freeze(now) do
+        @account.deposit(10)
+      end
       expect(@account.transactions.length).to eq(1)
       expect(@account.transactions[0].type).to eq("credit")
       expect(@account.transactions[0].amount).to eq(10)
       expect(@account.transactions[0].balance).to eq(1010)
+      expect(@account.transactions[0].date).to eq(now)
     end
   end 
 

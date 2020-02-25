@@ -4,6 +4,7 @@
       "/Users/lukeboat/Documents/Programing/Tech_test_bank/spec/bank_account_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           null,
           1,
@@ -34,6 +35,10 @@
           null,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -293,6 +298,6 @@
         ]
       }
     },
-    "timestamp": 1582665753
+    "timestamp": 1582666267
   }
 }

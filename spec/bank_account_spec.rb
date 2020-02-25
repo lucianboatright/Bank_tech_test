@@ -35,19 +35,35 @@ describe BankAccount do
         @account.deposit(10)
       end
       expect(@account.transactions.length).to eq(1)
-      expect(@account.transactions[0].type).to eq("credit")
+      expect(@account.transactions[0].type).to eq("debit")
       expect(@account.transactions[0].amount).to eq(10)
       expect(@account.transactions[0].balance).to eq(1010)
       expect(@account.transactions[0].date).to eq(now)
     end
-  end 
-
-
-  # describe '#withdraw' do
-  #   it 'removes money from balance' do
-  #     @account.withdraw(10)
-  #     expect(@account.balance).to eq(-10)
-  #   end
+    it 'test multiple transactions recorded' do
+      @account.balance += 1000
+      @account.deposit(10)
+      @account.deposit(20)
+      @account.deposit(30)
+      expect(@account.transactions.length).to eq(3)
+      expect(@account.transactions[2].amount).to eq(30)
+      expect(@account.transactions[2].balance).to eq(1060)
+    end      
+  end
+  describe '#withdraw' do
+    it 'removes money from balance' do
+      @account.balance += 1000
+      now = Time.now
+      Timecop.freeze(now) do
+        @account.withdraw(10)
+      end
+      expect(@account.transactions.length).to eq(1)
+      expect(@account.transactions[0].type).to eq("credit")
+      expect(@account.transactions[0].amount).to eq(10)
+      expect(@account.transactions[0].balance).to eq(990)
+      expect(@account.transactions[0].date).to eq(now)
+    end
+  end
 
 end
 

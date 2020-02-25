@@ -1,63 +1,38 @@
 # hold bank account actions like add/remove/show
-# require 'bank_statment'
+require "./bank_statment"
+
+require "./bank_interactions"
 
 
 class BankAccount
 
-  attr_reader :balance, :account
+  attr_reader :balance
 
   def initialize(balance = 0)
     @balance = balance
-    @account = [['date || credit || debit || balance']]
+    @statments = [['date || credit || debit || balance']]
   end
 
-  def credit_balance(credit)
-    @balance += credit
-    statment = BankStatment.new
-    @account << statment.credit_statment(credit)
+  def add_balace(money)
+    @balance += money
+    @statments << BankStatment.debit_statment(money, @balance)
   end
 
-  def debit_balance(credit)
-    @balance -= credit
-    statment = BankStatment.new
-    @account << statment.debit_statment(credit)
+  def remove_balance(money)
+    @balance -= money
+    @statments << BankStatment.credit_statment(money, @balance)
   end
 
   def show
-    puts @account.join("\n")
-    
+    puts @statments.join("\n")
   end
 
 end
-
-
-
-class BankStatment
-
-  attr_reader :statment
-
-  def initialize()
-    @statment = [["#{Time.now}"],["||"],[],["||"],[],["||"],[]]
-  end
-
-  def credit_statment(credit)
-    account = BankAccount.new
-    @statment[2] = account.credit_balance(credit) && @statment[6] = account.balance
-  end
-
-  def debit_statment(credit)
-    @statment[4] = BankAccount.debit_balance(credit) && @statment[6] = BankAccount.balance
-  end
-
-end
-
-
-    # new_statment = ["date || || #{credit} || #{balance}"]
 
 Nic = BankAccount.new
-Nic.credit_balance(1000000)
-Nic.debit_balance(500000)
-Nic.debit_balance(25000)
+Nic.add_balace(1000000)
+Nic.remove_balance(500000)
+Nic.remove_balance(25000)
 Nic.show()
 
 

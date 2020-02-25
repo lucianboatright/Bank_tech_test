@@ -1,21 +1,15 @@
 #holds bank account arrays 
-require "bank_accounts"
+# require "./bank_accounts"
 
 
 class BankStatment
 
-  attr_reader :statment
-
-  def initialize()
-    @statment = [["#{Time.now}"],["||"],[],["||"],[],["||"],[]]
+  def self.debit_statment(money, balance)
+    ["date || #{money} || || #{balance}"]  
   end
 
-  def add_statment(credit)
-    @statment[2] = BankAccount.add_balance(credit) + @statment[6] = BankAccount.balance
-  end
-
-  def remove_statment(credit)
-    @statment[4] = BankAccount.remove_balance(credit) + @statment[6] = BankAccount.balance
+  def self.credit_statment(money, balance)
+    ["date || || #{money} || #{balance}"]  
   end
 
 end

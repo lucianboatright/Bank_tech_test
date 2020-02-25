@@ -8,7 +8,7 @@ describe BankAccount do
 
   describe '#account_balance' do
     it 'has an initial balance' do
-      expect(@account.account_balance).to eq(0)
+      expect(@account.balance).to eq(0)
     end
   end
   describe '#transaction' do
@@ -16,6 +16,19 @@ describe BankAccount do
       expect(@account.transactions).to eq([])
     end
   end 
+  describe '#deposit' do
+    it 'adds money to balance' do
+      @account.deposit(10)
+      expect(@account.balance).to eq(10)
+    end
+    it 'can make multiple deposits' do
+      @account.deposit(10)
+      @account.deposit(30)
+      @account.deposit(10)
+      expect(@account.balance).to eq(50)
+    end
+  end 
+
 end
 
 

@@ -27,7 +27,18 @@ describe BankAccount do
       @account.deposit(10)
       expect(@account.balance).to eq(50)
     end
+    it 'deposit transaction recorded' do
+      @account.deposit(10)
+      expect(@account.transactions.length).to eq(1)
+    end
   end 
+
+
+  # describe '#withdraw' do
+  #   it 'removes money from balance' do
+  #     @account.withdraw(10)
+  #     expect(@account.balance).to eq(-10)
+  #   end
 
 end
 

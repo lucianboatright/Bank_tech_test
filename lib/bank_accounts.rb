@@ -5,12 +5,13 @@ class BankAccount
 
   def initialize()
     @balance = 0
-    @transactions = []
+    @transactions = []       
   end
 
 
   def deposit(amount)
     @balance += amount
+    @transactions << BankTransaction.new("credit", Time.now, amount, @balance)
   end
 
 end

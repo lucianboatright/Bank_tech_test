@@ -8,10 +8,6 @@ class BankAccount
     @transactions = []
   end
 
-
-
-
-
 end
 
 

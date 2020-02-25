@@ -56,6 +56,11 @@ hold the date of deposite or withdraw
 
 
 # How To Run
+Open a Terminal on your computer
+Go to the parent directory of the program
+Open an IRB
+require 'filename.rb'
+Once the file is open in the IRB create 
 User can run the code through an IRB or REPL rarther than command line interfaces 
 
 

@@ -25,6 +25,7 @@ The user can then run the commands below to either deposit money, withdraw money
 ## Gems and packages
 - Simple-cove for test coverage 
 - Rubocop for code quality
+- Timecop for managing time in testing
 
 
 ## Acceptance criteria
@@ -65,7 +66,8 @@ I would like to print all the transactions
 In a formatted statement in set spots 
 
 
-
+## Test coverage
+100% with 12 tests
 
 
 
